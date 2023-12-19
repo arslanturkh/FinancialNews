@@ -1,0 +1,33 @@
+.container {
+    background-color: #28a745; /* Green background */
+  }
+  
+  h1 {
+    color: hwb(0 0% 100%); 
+  }
+  
+  .dasnboard {
+    margin: 0 auto;
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+  }
+  
+  .dasnboard input,
+  .dasnboard button {
+    width: 100%;
+  }
+  
+  .dasnboard button {
+    background-color: #b63c3c; /* Green background */
+    color: #ffffff; /* White text color */
+    border: none;
+  }
+  
+  .dasnboard button:hover {
+    background-color: #28a745; /* Darker green background on hover */
+    cursor: pointer;
+  }
+  

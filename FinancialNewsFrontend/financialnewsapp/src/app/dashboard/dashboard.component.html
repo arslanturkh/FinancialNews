@@ -1,0 +1,45 @@
+<div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
+    <div class="dasnboard">
+        <div class="text-center mb-5">
+            <h1>Financial News Search</h1>
+        </div>
+        <form (submit)="onSubmit()" class="row g-3">
+            <div class="col-md-3">
+                <input
+                type="text"
+                id="searchWord"
+                name="searchWord"
+                [(ngModel)]="searchWord"
+                class="form-control"
+                placeholder="Search by words"
+                />
+            </div>
+        
+            <div class="col-md-3">
+                <input
+                type="date"
+                id="date"
+                name="date"
+                [(ngModel)]="date"
+                class="form-control"
+                />
+            </div>
+        
+            <div class="col-md-2">
+                <input
+                type="text"
+                id="source"
+                name="source"
+                [(ngModel)]="source"
+                class="form-control"
+                placeholder="Source"
+                />
+            </div>
+        
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+  

@@ -1,0 +1,215 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.14
+-- Dumped by pg_dump version 12.14
+
+-- Started on 2023-03-27 12:07:10
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 203 (class 1259 OID 16440)
+-- Name: news; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.news (
+    id integer NOT NULL,
+    title text NOT NULL,
+    url text NOT NULL,
+    source text,
+    published_date date
+);
+
+
+ALTER TABLE public.news OWNER TO postgres;
+
+--
+-- TOC entry 202 (class 1259 OID 16438)
+-- Name: news_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.news_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.news_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2824 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: news_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.news_id_seq OWNED BY public.news.id;
+
+
+--
+-- TOC entry 2687 (class 2604 OID 16443)
+-- Name: news id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.news ALTER COLUMN id SET DEFAULT nextval('public.news_id_seq'::regclass);
+
+
+--
+-- TOC entry 2818 (class 0 OID 16440)
+-- Dependencies: 203
+-- Data for Name: news; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.news (id, title, url, source, published_date) FROM stdin;
+1	Deposit drain from smaller banks into financial giants like JPMorgan Chase has slowed, sources say	https://www.cnbc.com/2023/03/25/banking-crisis-deposit-drain-from-small-banks-into-jpm-wfc-c-slowed.html	CNBC	2023-03-25
+2	Bank turmoil is boosting appetite for specific sector ETFs. Here’s why	https://www.cnbc.com/2023/03/25/bank-turmoil-is-boosting-appetite-for-specific-sector-etfs-heres-why.html	CNBC	2023-03-25
+3	Investing isn't free. But here's why 20% of investors think it is	https://www.cnbc.com/2023/03/25/investors-pay-fees-but-may-not-know.html	CNBC	2023-03-25
+4	Nearly $100 billion in deposits pulled from banks; officials call system 'sound and resilient'	https://www.cnbc.com/2023/03/24/100-billion-pulled-from-banks-but-system-called-sound-and-resilient.html	CNBC	2023-03-25
+5	Key lawmakers say upcoming hearings on bank failures aim to boost U.S. confidence in banking sector	https://www.cnbc.com/2023/03/24/svb-failure-congress-hearings-aim-to-increase-confidence-in-banks.html	CNBC	2023-03-24
+6	Here are a financial advisor's 4 most important money tips for parents with young kids	https://www.cnbc.com/2023/03/24/an-advisors-4-most-important-money-tips-for-parents-with-young-kids.html	CNBC	2023-03-24
+7	Stocks making the biggest moves midday: Block, Deutsche Bank, GameStop, Activision and more	https://www.cnbc.com/2023/03/24/stocks-making-the-biggest-moves-midday-sq-db-gme-atvi-and-more.html	CNBC	2023-03-24
+8	Deutsche Bank is not the next Credit Suisse, analysts say as panic spreads	https://www.cnbc.com/2023/03/24/deutsche-bank-is-not-the-next-credit-suisse-analysts-say-as-panic-spreads.html	CNBC	2023-03-24
+9	Stocks making the biggest moves premarket: Deutsche Bank, Coinbase, Block, Marathon Oil and more	https://www.cnbc.com/2023/03/24/stocks-making-the-biggest-moves-premarket-db-coin-sq-mro.html	CNBC	2023-03-24
+10	Deutsche Bank shares slide after sudden spike in the cost of insuring against its default	https://www.cnbc.com/2023/03/24/deutsche-bank-shares-slide-8percent-after-a-sudden-spike-in-default-insurance-costs.html	CNBC	2023-03-24
+11	TikTok wants to distance itself from China — but Beijing is getting involved	https://www.cnbc.com/2023/03/24/tiktok-wants-to-distance-from-china-but-the-governments-getting-involved.html	CNBC	2023-03-24
+12	The Swiss claim the U.S. banking crisis ultimately toppled Credit Suisse. But are they right?	https://www.cnbc.com/2023/03/24/swiss-claim-the-us-banking-crisis-ultimately-toppled-credit-suisse.html	CNBC	2023-03-24
+13	Crypto is banned in China, but Binance employees and support volunteers tell people how to bypass the ban	https://www.cnbc.com/2023/03/23/binance-employees-volunteers-tell-users-how-to-evade-china-crypto-ban.html	CNBC	2023-03-24
+14	Banks ramp up use of new Fed facility created during crisis	https://www.cnbc.com/2023/03/23/banks-ramp-up-use-of-new-fed-facility-created-in-crisis.html	CNBC	2023-03-23
+15	Ex-Morgan Stanley advisor charged with defrauding NBA players out of millions	https://www.cnbc.com/2023/03/23/ex-morgan-stanley-advisor-charged-nba-fraud.html	CNBC	2023-03-23
+16	Stocks making the biggest moves midday: Netflix, Block, Snap, KB Home and more	https://www.cnbc.com/2023/03/23/stocks-making-the-biggest-moves-midday-nflx-sq-snap-kbh.html	CNBC	2023-03-23
+17	Stocks making the biggest moves premarket: Coinbase, AMC, Chewy, First Republic and more	https://www.cnbc.com/2023/03/23/stocks-premarket-moves-amc-chwy-bank-fed-trading-outlook.html	CNBC	2023-03-23
+18	Bank of England hikes interest rates by 25 basis points after inflation surprises	https://www.cnbc.com/2023/03/23/bank-of-england-hikes-interest-rates-by-25-basis-points-after-inflation-surprises.html	CNBC	2023-03-23
+19	European lawmakers are quietly miffed at U.S. regulators over SVB's collapse	https://www.cnbc.com/2023/03/23/us-bank-regulators-criticized-in-european-union-after-svb-collapse-.html	CNBC	2023-03-23
+20	Swiss regulator defends controversial $17 billion writedown of Credit Suisse bonds	https://www.cnbc.com/2023/03/23/swiss-regulator-says-central-bank-loan-to-credit-suisse-justified-at1-bond-writedown.html	CNBC	2023-03-23
+21	Tencent's online ad revenue grows for the first time in more than a year	https://www.cnbc.com/2023/03/23/tencents-online-ads-revenue-grows-for-the-first-time-since-2021.html	CNBC	2023-03-23
+22	Wells Fargo lists financial instability as biggest economic risk post-Fed decision	https://www.cnbc.com/2023/03/22/financial-instability-as-biggest-market-risk-wells-fargo.html	CNBC	2023-03-23
+23	Stocks making the biggest moves after hours: Steelcase, Coinbase, KB Home and more	https://www.cnbc.com/2023/03/22/stocks-moving-big-after-hours-scs-coin-kbh.html	CNBC	2023-03-22
+24	Regional bank shares fall as Fed persists with rate hikes despite industry turmoil	https://www.cnbc.com/2023/03/22/regional-bank-shares-fall-as-fed-persists-with-rate-hikes-despite-industry-turmoil.html	CNBC	2023-03-23
+25	The Fed forecasts just one more rate hike this year	https://www.cnbc.com/2023/03/22/the-fed-projections-call-for-just-one-more-rate-hike-this-year.html	CNBC	2023-03-23
+26	Here's what changed in the new Fed statement	https://www.cnbc.com/2023/03/22/heres-what-changed-in-the-new-fed-statement.html	CNBC	2023-03-22
+27	Fed hikes rates by a quarter percentage point, indicates increases are near an end	https://www.cnbc.com/2023/03/22/fed-rate-hike-decision-march-2023.html	CNBC	2023-03-23
+28	The IRS plans to tax some NFTs as collectibles — and the rich would pay up to 28% on profits	https://www.cnbc.com/2023/03/22/how-are-nfts-taxed-the-irs-plan.html	CNBC	2023-03-22
+29	Stocks making the biggest moves midday: Nvidia, First Republic, Nike, GameStop and more	https://www.cnbc.com/2023/03/22/stocks-moving-big-midday-nvda-frc-nke-gme.html	CNBC	2023-03-22
+30	XRP cryptocurrency jumps as investors hope Ripple will win legal battle with the SEC	https://www.cnbc.com/2023/03/22/xrp-cryptocurrency-jumps-as-investors-hope-ripple-will-win-sec-case.html	CNBC	2023-03-22
+31	Inclusive Capital's Ubben named to Vistry board as homebuilder looks to leverage recent acquisition	https://www.cnbc.com/2023/03/25/inclusive-capitals-jeff-ubben-named-to-vistry-board-what-could-happen-next.html	CNBC	2023-03-25
+32	Top Wall Street analysts pick these five stocks for the long term	https://www.cnbc.com/2023/03/19/top-wall-street-analysts-like-stocks-like-bjs-crowdstrike.html	CNBC	2023-03-19
+33	Icahn proposes three candidates for Illumina’s board — Here’s what could be next in the battle	https://www.cnbc.com/2023/03/18/icahn-proposes-three-candidates-for-illuminas-board-heres-what-could-be-next-in-the-battle.html	CNBC	2023-03-18
+34	Want to invest in companies that empower women? Here's what you need to know	https://www.cnbc.com/2023/03/17/investing-in-companies-that-empower-women.html	CNBC	2023-03-17
+35	Accounts to buy bonds from the government jumped fivefold as yields boomed	https://www.cnbc.com/2023/03/16/accounts-to-buy-bonds-from-the-government-jumped-fivefold-as-yields-boomed.html	CNBC	2023-03-16
+36	Ron Baron bought Charles Schwab shares during Monday's double-digit sell-off	https://www.cnbc.com/2023/03/14/ron-baron-bought-charles-schwab-shares-during-mondays-double-digit-sell-off.html	CNBC	2023-03-14
+37	Top analysts are bullish on these five stocks in uncertain times	https://www.cnbc.com/2023/03/12/top-analysts-are-bullish-on-stocks-like-snowflake-salesforce.html	CNBC	2023-03-12
+38	Crypto bank Signature slides on Friday amid troubles at Silicon Valley Bank, Silvergate	https://www.cnbc.com/2023/03/10/crypto-bank-signature-slides-on-friday-amid-troubles-at-silicon-valley-bank-silvergate.html	CNBC	2023-03-10
+39	Women aren't investing at the same rate as men. Here's why it matters—and how the gap can be closed	https://www.cnbc.com/2023/03/09/how-to-close-the-gender-investing-gap.html	CNBC	2023-03-09
+40	Want a risk-free 5% return? How to buy a 3-month Treasury	https://www.cnbc.com/2023/03/08/want-a-risk-free-5percent-return-how-to-buy-a-3-month-treasury.html	CNBC	2023-03-08
+41	Fed poised to approve quarter-point rate hike this week, despite market turmoil	https://www.cnbc.com/2023/03/17/fed-poised-to-approve-quarter-point-rate-hike-next-week-despite-market-turmoil.html	CNBC	2023-03-20
+42	One year after the first rate hike, the Fed stands at policy crossroads	https://www.cnbc.com/2023/03/16/one-year-after-the-first-rate-hike-the-fed-stands-at-policy-crossroads.html	CNBC	2023-03-16
+43	European Central Bank hikes rates despite market mayhem, pledges support if needed	https://www.cnbc.com/2023/03/16/ecb-rate-decision-march-meeting-lagarde-announces-new-rate-hike.html	CNBC	2023-03-16
+44	Long-awaited Fed digital payment system to launch in July	https://www.cnbc.com/2023/03/15/long-awaited-fed-digital-payment-system-to-launch-in-july.html	CNBC	2023-03-16
+45	Goldman Sachs cuts GDP forecast because of stress on small banks, which are key to U.S. economy	https://www.cnbc.com/2023/03/15/goldman-sachs-cuts-gdp-forecast-because-of-stress-on-small-banks.html	CNBC	2023-03-15
+46	One of the best ways to figure out what the Fed will do next is to look at regional bank stocks	https://www.cnbc.com/2023/03/15/one-of-the-best-ways-to-figure-out-what-the-fed-will-do-next-is-to-look-at-reginal-bank-stocks.html	CNBC	2023-03-15
+47	Wholesale prices post unexpected decline of 0.1% in February; retail sales fall	https://www.cnbc.com/2023/03/15/ppi-february-2023-.html	CNBC	2023-03-15
+48	Moody's Analytics' Mark Zandi says Fed unlikely to hike rates in March given banking turmoil	https://www.cnbc.com/2023/03/15/fed-unlikely-to-raise-rates-at-march-meeting-moodys-analytics-says.html	CNBC	2023-03-15
+49	Inflation gauge increased 0.4% in February, as expected and up 6% from a year ago	https://www.cnbc.com/2023/03/14/cpi-inflation-february-2023-.html	CNBC	2023-03-14
+50	Something broke, but the Fed is still expected to go through with rate hikes	https://www.cnbc.com/2023/03/13/something-broke-but-the-fed-is-still-expected-to-go-through-with-rate-hikes.html	CNBC	2023-03-14
+51	Just like that: Market pricing swings back to quarter-point Fed rate hike	https://www.cnbc.com/2023/03/10/just-like-that-market-pricing-swings-back-to-quarter-point-fed-rate-hike.html	CNBC	2023-03-11
+52	Unemployment for Black and Hispanic women rose in February, but more workers join the labor force	https://www.cnbc.com/2023/03/10/unemployment-for-black-and-hispanic-women-rose-in-february.html	CNBC	2023-03-10
+53	Here's where the jobs are for February 2023 — in one chart	https://www.cnbc.com/2023/03/10/heres-where-the-jobs-are-for-february-2023-in-one-chart.html	CNBC	2023-03-10
+54	Payrolls rose 311,000 in February, more than expected, showing solid growth	https://www.cnbc.com/2023/03/10/jobs-report-february-2023.html	CNBC	2023-03-10
+55	UK economy rebounds with stronger-than-expected January GDP print	https://www.cnbc.com/2023/03/10/uk-economy-rebounds-with-stronger-than-expected-january-gdp-print.html	CNBC	2023-03-10
+56	Job openings declined in January but still far outnumber available workers	https://www.cnbc.com/2023/03/08/job-openings-declined-in-january-but-still-far-outnumber-available-workers.html	CNBC	2023-03-08
+57	Private payrolls rose by 242,000 in February, better than expected, ADP says	https://www.cnbc.com/2023/03/08/adp-jobs-report-february-2023-.html	CNBC	2023-03-08
+58	How China's shifting growth picture could hit global markets	https://www.cnbc.com/2023/03/07/how-chinas-shifting-growth-picture-could-hit-global-markets.html	CNBC	2023-03-07
+59	Fed's Powell heads to Capitol Hill this week, and he's going to have his hands full	https://www.cnbc.com/2023/03/06/fed-chair-powell-heads-to-capitol-hill-and-hes-got-his-hands-full.html	CNBC	2023-03-06
+60	Tesla is not the only company reviewing its Europe investment after Biden's Inflation Reduction Act	https://www.cnbc.com/2023/03/03/tesla-one-of-many-companies-to-review-investments-in-europe-after-biden-ira.html	CNBC	2023-03-03
+61	Euro zone inflation softens to 8.5% in February as ECB signals interest rate hiking is not over	https://www.cnbc.com/2023/03/02/inflation-euro-zone-prices-dip-to-8point5percent-as-ecb-flags-rate-hiking-not-over.html	CNBC	2023-03-02
+62	The racial retirement savings gap remains wide – How these state IRA programs are working toward equity	https://www.cnbc.com/2023/02/28/state-ira-programs-work-toward-closing-the-racial-retirement-savings-gap.html	CNBC	2023-02-28
+63	Fed can't tame inflation without 'significantly' more hikes that will cause a recession, paper says	https://www.cnbc.com/2023/02/24/the-fed-cant-tame-inflation-without-more-hikes-paper-says.html	CNBC	2023-02-24
+64	Key Fed inflation measure rose 0.6% in January, more than expected	https://www.cnbc.com/2023/02/24/key-fed-inflation-measure-rose-0point6percent-in-january-more-than-expected.html	CNBC	2023-02-24
+65	OECD says global economic outlook 'slightly better' for 2023 but inflation risks linger	https://www.cnbc.com/2023/02/24/oecd-says-global-economic-outlook-slightly-better-for-2023-.html	CNBC	2023-02-24
+66	UK economy in 'a lot better shape' than bleak figures suggest, fund manager says	https://www.cnbc.com/2023/02/23/uk-economy-in-a-lot-better-shape-than-bleak-figures-suggest-fund-manager-says.html	CNBC	2023-02-23
+67	Consumer debt hits record $16.9 trillion as delinquencies also rise	https://www.cnbc.com/2023/02/16/consumer-debt-hits-record-16point9-trillion-as-delinquencies-rise-as-well.html	CNBC	2023-02-17
+68	Wholesale prices rose 0.7% in January, more than expected, fueling inflation increase	https://www.cnbc.com/2023/02/16/producer-price-index-january-2023-.html	CNBC	2023-02-16
+69	Sanctions on Russian oil are having the 'intended effect,' IEA says	https://www.cnbc.com/2023/02/16/sanctions-on-russian-oil-are-having-the-intended-effect-iea-says.html	CNBC	2023-02-16
+70	Retail sales jump 3% in January, smashing expectations despite inflation increase	https://www.cnbc.com/2023/02/15/retail-sales-january-2023-.html	CNBC	2023-02-15
+71	Lidar maker Ouster dips as quarterly losses widen, but CEO sees savings in Velodyne merger	https://www.cnbc.com/2023/03/23/ouster-oust-q4-2022-results.html	CNBC	2023-03-23
+72	Olive Garden parent raises revenue outlook as same-store sales jump	https://www.cnbc.com/2023/03/23/darden-restaurants-dri-q3-2023-earnings.html	CNBC	2023-03-23
+73	Ford's EV business lost $2 billion in 2022, offset by big profits in fleet and legacy units	https://www.cnbc.com/2023/03/23/ford-2022-unit-financials.html	CNBC	2023-03-23
+74	Tencent's online ad revenue grows for the first time in more than a year	https://www.cnbc.com/2023/03/23/tencents-online-ads-revenue-grows-for-the-first-time-since-2021.html	CNBC	2023-03-23
+75	Geely shares jump after automaker beats revenue expectations for 2022	https://www.cnbc.com/2023/03/22/geely-earnings-2022-profit-surges-company-touts-ev-sales.html	CNBC	2023-03-22
+76	Nike's holiday quarter plagued by bloated inventory, weak China sales	https://www.cnbc.com/2023/03/21/nike-nke-q3-earnings-2023.html	CNBC	2023-03-22
+77	GameStop stock soars after retailer posts first quarterly profit in two years	https://www.cnbc.com/2023/03/21/gamestop-gme-q4-2022-earnings.html	CNBC	2023-03-22
+78	Satellite maker Terran Orbital sees annual revenue climb near $100 million	https://www.cnbc.com/2023/03/21/terran-orbital-llap-q4-results.html	CNBC	2023-03-21
+79	FedEx hikes 2023 earnings forecast as cost-cutting initiatives bear fruit	https://www.cnbc.com/2023/03/16/fedex-fdx-earnings-q3-2023.html	CNBC	2023-03-17
+80	Adobe lifts profit forecast for fiscal 2023 and beats estimates on quarterly results	https://www.cnbc.com/2023/03/15/adobe-adbe-earnings-q1-2023.html	CNBC	2023-03-20
+81	BMW expects higher margin and deliveries in 2023 amid electric rollout	https://www.cnbc.com/2023/03/15/bmw-expects-higher-margin-and-deliveries-in-2023-amid-electric-rollout.html	CNBC	2023-03-15
+82	GitLab loses one-third of its value after software company issues weak revenue forecast	https://www.cnbc.com/2023/03/13/gitlab-gtlb-earnings-q4-2023.html	CNBC	2023-03-13
+83	United shares tumble after airline forecasts first-quarter loss	https://www.cnbc.com/2023/03/13/united-shares-tumble-after-airline-forecasts-first-quarter-loss.html	CNBC	2023-03-15
+84	Luxury automaker Porsche issues growth outlook after record 2022 earnings	https://www.cnbc.com/2023/03/13/luxury-automaker-porsche-issues-growth-outlook-after-record-2022-earnings.html	CNBC	2023-03-13
+85	Oracle shares sink nearly 5% after third-quarter revenue miss	https://www.cnbc.com/2023/03/09/oracle-shares-sink-nearly-5percent-after-third-quarter-revenue-miss.html	CNBC	2023-03-10
+86	Gap announces big loss, declining sales and executive shakeup	https://www.cnbc.com/2023/03/09/gap-gps-q4-earnings-2022.html	CNBC	2023-03-09
+87	Allbirds stock plunges after company admits missteps, unveils new strategy	https://www.cnbc.com/2023/03/09/allbirds-bird-q4-earnings-2022.html	CNBC	2023-03-10
+88	Ulta posts strong holiday quarter as shoppers squeeze makeup into their budgets	https://www.cnbc.com/2023/03/09/ulta-beauty-ulta-earnings-q4-2022.html	CNBC	2023-03-09
+89	Adidas warns of first annual loss in three decades and cuts dividend after Ye split	https://www.cnbc.com/2023/03/08/adidas-warns-of-first-annual-loss-in-three-decades-and-cuts-dividend-after-ye-split.html	CNBC	2023-03-08
+90	Singapore's Sea Group turns profitable for the first time	https://www.cnbc.com/2023/03/08/singapores-sea-group-turns-profitable-for-the-first-time.html	CNBC	2023-03-08
+91	Dick's Sporting Goods smashes same-store sales expectations for holiday quarter	https://www.cnbc.com/2023/03/07/dicks-sporting-goods-dks-q4-2022-earnings.html	CNBC	2023-03-07
+92	Lego sales leap 17% as fans buy bigger, more complicated sets	https://www.cnbc.com/2023/03/07/lego-sales-rise-harry-potter-star-wars.html	CNBC	2023-03-07
+93	Nordstrom earnings top expectations as retailer starts winding down Canada operations	https://www.cnbc.com/2023/03/02/nordstrom-jwn-earnings-q4-2022.html	CNBC	2023-03-03
+94	Best Buy tops holiday-quarter expectations but warns of further sales declines in the coming year	https://www.cnbc.com/2023/03/02/best-buy-bby-earnings-q4-2023.html	CNBC	2023-03-02
+95	Macy's shares jump after holiday-quarter profit tops expectations	https://www.cnbc.com/2023/03/02/macys-m-earnings-q4-2022.html	CNBC	2023-03-02
+96	Polestar cuts annual losses in half as it ramps up EV production	https://www.cnbc.com/2023/03/02/polestar-psny-q4-earnings-ev-production.html	CNBC	2023-03-02
+97	Salesforce shares jump 16% on better-than-expected forecast	https://www.cnbc.com/2023/03/01/salesforce-crm-earnings-q4-2023.html	CNBC	2023-03-02
+98	Kohl's posts surprising holiday-quarter loss, offers weak sales outlook	https://www.cnbc.com/2023/03/01/kohls-kss-earnings-q4-2022.html	CNBC	2023-03-01
+99	Lowe's offers soft sales outlook, warning of a 'cautious consumer'	https://www.cnbc.com/2023/03/01/lowes-low-q4-earnings-2022.html	CNBC	2023-03-01
+100	Rivian posts mixed fourth quarter and underwhelming EV production outlook, stock falls	https://www.cnbc.com/2023/02/28/rivian-rivn-earnings-q4-2022.html	CNBC	2023-03-01
+\.
+
+
+--
+-- TOC entry 2825 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: news_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.news_id_seq', 100, true);
+
+
+--
+-- TOC entry 2689 (class 2606 OID 16448)
+-- Name: news news_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.news
+    ADD CONSTRAINT news_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2690 (class 1259 OID 16451)
+-- Name: news_title_fulltext_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX news_title_fulltext_idx ON public.news USING gin (to_tsvector('english'::regconfig, title));
+
+
+-- Completed on 2023-03-27 12:07:10
+
+--
+-- PostgreSQL database dump complete
+--
+

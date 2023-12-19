@@ -1,0 +1,30 @@
+.spaced-columns th,
+.spaced-columns td {
+  border-right-width: 0;
+  padding-right: 1rem;
+  position: relative;
+}
+
+.spaced-columns th::before,
+.spaced-columns td::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1); /* Adjust the color and opacity as needed */
+}
+
+.sort-asc::after {
+    content: '▲';
+    font-size: 0.6em;
+    margin-left: 4px;
+  }
+  
+  .sort-desc::after {
+    content: '▼';
+    font-size: 0.6em;
+    margin-left: 4px;
+  }
+  
